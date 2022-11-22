@@ -18,9 +18,7 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   setMoveThreshold(12);
-
   background('white');
-
   imageMode(CENTER);
 
   //to clean the page and make the background white again (lol)
@@ -131,23 +129,6 @@ function changeBlack() {
 	myColor = ("black");
 }
 
-function deviceShaken() {
-  mySfondi+=1;
-
-  if (mySfondi === 1) {
-    image(sfondo1, width/2, height/2,windowWidth, windowHeight);
-  }
-  if (mySfondi === 2) {
-    image(sfondo2, width/2, height/2,windowWidth, windowHeight );
-  } else if (mySfondi === 3) {
-    image(sfondo3, width/2, height/2,windowWidth, windowHeight);
-  } else if (mySfondi === 4) {
-    image(sfondo4, width/2, height/2,windowWidth, windowHeight );
-  } else if (mySfondi>= 4) {
-    mySfondi=0;
-  }
-}
-
 
 function draw() {
   image(monstereyes, width/2, height/2, 300, 300);
@@ -164,6 +145,23 @@ function goToHomePage() {
 
 function saveMonster() {
   save("myMonster.png");
+}
+
+function deviceShaken() {
+  mySfondi+=1;
+
+  if (mySfondi === 1) {
+    image(sfondo1, width/2, height/2,windowWidth, windowHeight);
+  }
+  if (mySfondi === 2) {
+    image(sfondo2, width/2, height/2,windowWidth, windowHeight );
+  } else if (mySfondi === 3) {
+    image(sfondo3, width/2, height/2,windowWidth, windowHeight);
+  } else if (mySfondi === 4) {
+    image(sfondo4, width/2, height/2,windowWidth, windowHeight );
+  } else if (mySfondi>= 4) {
+    mySfondi=0;
+  }
 }
 
 function touchMoved() {
