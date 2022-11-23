@@ -55,7 +55,7 @@ function setup() {
   blue.position(24, height/1.25); 
   blue.size(40, 40); 
   blue.style(
-    "position:absolute; margin-bottom: 45px;"
+    "position:absolute; margin-bottom: 0px;"
   );
 	blue.mousePressed(changeBlue);
   pop();
