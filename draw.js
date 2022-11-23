@@ -168,7 +168,7 @@ function draw() {
   h2.style(
     "position:absolute; padding: 16px; font-weight: 500; text-align:left;font-style: normal; font-family:'Gothic A1'; font-size:30px;"
   );
-  h2.position(0,0);
+  h2.position(width/1.4, 0);
 }
 
 function goToHomePage() {
