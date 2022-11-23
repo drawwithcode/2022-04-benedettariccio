@@ -51,6 +51,14 @@
    );
    homeButton.mousePressed(goToHomePage); 
 
+   shake = createImg('./assets/shake-21.png');
+   shake.position(width/1.4, 32); 
+   shake.size(60,60); 
+   shake.style(
+    "position:absolute; padding: 16px 22px;"
+   );
+  
+
 
    push();
  	let blue = createImg("./assets/colori-14.png");
