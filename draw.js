@@ -22,32 +22,32 @@ function setup() {
   imageMode(CENTER);
 
   //to clean the page and make the background white again (lol)
-  whiteButton = createImg('./assets/icone-21.png'); 
-  whiteButton.position(width/1.4, height/1.2); 
-  whiteButton.size(60, 60); 
-  whiteButton.style(
-    "position:absolute; padding: 28px;"
-  );
-  whiteButton.mousePressed(whiteCanvas); //callback
-
-
   saveButton = createImg('./assets/icone-19.png'); 
-  saveButton.position(0, height/1.2); 
+  saveButton.position(width/1.4, height/1.2); 
   saveButton.size(60, 60); 
   saveButton.style(
+    "position:absolute; padding: 28px;"
+  );
+  saveButton.mousePressed(saveMonster); //callback
+
+
+  homeButton = createImg('./assets/icone-20.png'); 
+  homeButton.position(0, height/1.2); 
+  homeButton.size(60, 60); 
+  homeButton.style(
     "position:absolute; padding: 28px 22px;"
   );
-  saveButton.mousePressed(saveMonster); 
+  homeButton.mousePressed(goToHomePage); 
 
 
   
-  homeButton = createImg('./assets/icone-20.png'); 
-  homeButton.position(0, 32); 
-  homeButton.size(60, 60); 
-  homeButton.style(
-    "position:absolute; padding: 16px 22px;"
+  whiteButton = createImg('./assets/icone-21.png'); 
+  whiteButton.position(width/2, height/1.2); 
+  whiteButton.size(60, 60); 
+  whiteButton.style(
+    "position:absolute; padding: 28px; transform: translate(-50%,0px);"
   );
-  homeButton.mousePressed(goToHomePage); 
+  whiteButton.mousePressed(whiteCanvas); 
 
   
   push();
@@ -55,7 +55,7 @@ function setup() {
   blue.position(24, height/1.25); 
   blue.size(40, 40); 
   blue.style(
-    "position:absolute; margin-bottom: 0px;"
+    "position:absolute; margin-bottom: 45px;"
   );
 	blue.mousePressed(changeBlue);
   pop();
@@ -129,24 +129,6 @@ function changeBlack() {
 	myColor = ("black");
 }
 
-
-function draw() {
-  image(monstereyes, width/2, height/2, 300, 300);
-  if (mouseIsPressed) {
-    strokeWeight(10);
-    stroke(myColor);
-    line(pmouseX, pmouseY, mouseX, mouseY);
-  }
-}
-
-function goToHomePage() {
-  window.open("index.html", "_self");
-}
-
-function saveMonster() {
-  save("myMonster.png");
-}
-
 function deviceShaken() {
   mySfondi+=1;
 
@@ -162,6 +144,39 @@ function deviceShaken() {
   } else if (mySfondi>= 4) {
     mySfondi=0;
   }
+}
+
+
+function draw() {
+  image(monstereyes, width/2, height/2, 300, 300);
+  if (mouseIsPressed) {
+    strokeWeight(10);
+    stroke(myColor);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+
+  let h1 = createElement('h1', 'FIRST <br/> SHAKE');
+  h1.style('color', 'black');
+  h1.style(
+    "position:absolute; padding: 16px; font-weight: 500; text-align:left;font-style: normal; font-family:'Gothic A1'; font-size:30px;"
+  );
+  h1.position(0,0);
+
+
+  let h2 = createElement('h1', 'THEN <br/> DRAW');
+  h2.style('color', 'black');
+  h2.style(
+    "position:absolute; padding: 16px; font-weight: 500; text-align:left;font-style: normal; font-family:'Gothic A1'; font-size:30px;"
+  );
+  h2.position(0,0);
+}
+
+function goToHomePage() {
+  window.open("index.html", "_self");
+}
+
+function saveMonster() {
+  save("myMonster.png");
 }
 
 function touchMoved() {

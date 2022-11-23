@@ -18,9 +18,8 @@ function setup() {
 }
 
 function draw() {
-  
-    background('purple');
-    image(monster, width/2, height/2, 400, 400);
+  background('purple');
+  image(monster, width/2, height/2, 400, 400);
 
     
  let h1 = createElement('h1', 'THE WORLD IS <br/> FULL OF AMAZING MONSTERS!');
